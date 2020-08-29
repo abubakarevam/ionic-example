@@ -24,3 +24,21 @@
 @import "~@ionic/angular/css/text-alignment.css";
 @import "~@ionic/angular/css/text-transformation.css";
 @import "~@ionic/angular/css/flex-utils.css";
+
+span.title-text {
+    vertical-align: super;
+    margin-left: 10px;
+}
+
+.generic-card {
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    text-align: center;    
+    padding-top: 12px;
+    background-color: #fff;
+    cursor: pointer;
+}
+
+.generic-card .card-name h5 {
+    font-size: 12px;
+}

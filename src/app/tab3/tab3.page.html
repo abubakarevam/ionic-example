@@ -1,17 +1,46 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Tab 3
+      <img src="../../assets/evam/evam-actions-logo.png" height="30px" />
+      <span class="title-text">Dashboards</span>
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
+  <!-- <ion-header collapse="condense">
     <ion-toolbar>
       <ion-title size="large">Tab 3</ion-title>
     </ion-toolbar>
   </ion-header>
 
-  <app-explore-container name="Tab 3 page"></app-explore-container>
+  <app-explore-container name="Tab 3 page"></app-explore-container> -->
+
+  <!-- <ion-list-header color="light">Simple Bar Chart</ion-list-header>
+  <ion-card class="welcome-card">
+    <ion-card-header>
+      <ion-card-title>Simple Bar Chart</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <div id="highcharts" style="width:100%; height:400px;"></div>
+    </ion-card-content>
+  </ion-card> -->
+
+  <ion-grid>
+    <ion-row>
+      <ion-col size="6" *ngFor="let dashboard of dashboards">
+        <ion-item href="/dashboard/{{dashboard.name}}" no-padding>
+          <div class="generic-card dashboard">
+            <div class="dashboard-image">
+                <!-- <ion-icon name="folder" size="large"></ion-icon> -->
+                <img [src]="dashboard.thumbnail" class="scenario-icon" alt="Folder">
+            </div>
+            <div class="card-name dashboard-name">
+                <h5 class="text-center truncate" [title]="dashboard.name">{{dashboard.name}}</h5>
+            </div>
+          </div>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 </ion-content>

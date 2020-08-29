@@ -1,17 +1,40 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Tab 1
+      <img src="../../assets/evam/evam-actions-logo.png" height="30px" />
+      <span class="title-text">Workspace</span>
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 1</ion-title>
-    </ion-toolbar>
-  </ion-header>
+  <ion-grid>
+    <ion-row *ngIf="workspace">
+      <ion-col size="4" *ngFor="let folder of workspace.folder.children">
+        <div class="generic-card folder" (click)="getFolder(folder.id)">
+          <div class="folder-image">
+              <ion-icon name="folder" size="large"></ion-icon>
+          </div>
+          <div class="folder-name">
+              <h5 class="text-center truncate" [title]="folder.name">{{folder.name}}</h5>
+          </div>
+        </div>
+      </ion-col>
+    </ion-row>
 
-  <app-explore-container name="Tab 1 page"></app-explore-container>
+    <ion-row *ngIf="workspace">
+      <ion-col size="6" *ngFor="let scenario of workspace.folder.scenarios">
+        <div class="generic-card scenario">
+          <div class="scenario-image">
+              <img [src]="scenario.thumbnail || defaultThumbnail" class="scenario-icon" alt="Folder">
+          </div>
+          <div class="scenario-name">
+              <h5 class="text-center truncate" [title]="scenario.name">{{scenario.name}}</h5>
+          </div>
+        </div>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <!-- <app-explore-container name="Tab 1 page"></app-explore-container> -->
 </ion-content>
