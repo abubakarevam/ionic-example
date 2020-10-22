@@ -29,7 +29,7 @@
   <ion-grid>
     <ion-row>
       <ion-col size="6" *ngFor="let dashboard of dashboards">
-        <ion-item href="/dashboard/{{dashboard.name}}" no-padding>
+        <ion-item (click)="goToDashboard(dashboard.name)" no-padding>
           <div class="generic-card dashboard">
             <div class="dashboard-image">
                 <!-- <ion-icon name="folder" size="large"></ion-icon> -->

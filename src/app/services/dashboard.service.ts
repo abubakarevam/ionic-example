@@ -12,4 +12,8 @@ export class DashboardService {
   getDashboards() {
     return this.http.get(environment.baseUrl + '/dashboard');
   }
+
+  getDashboard(dashboardName) {
+    return this.http.get(environment.baseUrl + '/dashboard/' + dashboardName);
+  }
 }

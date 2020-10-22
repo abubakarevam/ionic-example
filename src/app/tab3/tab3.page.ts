@@ -25,8 +25,9 @@ export class Tab3Page {
   }
 
   goToDashboard(dashboardName) {
-    const navExtras: NavigationExtras = {state: {item: dashboardName}}
-    this.router.navigateByUrl("/detail", navExtras);
+    const navExtras: NavigationExtras = {state: {}};
+    // this.router.navigate(['dashboard/' + dashboardName], navExtras);
+    this.router.navigate(['dashboard/' + dashboardName], navExtras);
   }
 
   plotSimpleBarChart() {
